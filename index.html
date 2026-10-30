@@ -15,9 +15,88 @@
     />
 
     <link rel="stylesheet" href="/style.css" />
-    <script type="module" src="/main.js"></script>
+    <script type="module" src="/public/js/main.js"></script>
   </head>
   <body>
+      <header class="en-tete">
+        <div class="en-tete__contenu">
+          <div class="navigation">
+          <a class="en-tete__logo" href="index.html"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6c-2-1.5-5-2-8-2v14c3 0 6 .5 8 2 2-1.5 5-2 8-2V4c-3 0-6 .5-8 2z"/><path d="M12 6v14"/></svg>Agora</a>
+          <nav class="en-tete__nav" aria-label="Navigation principale">
+            <ul class="en-tete__liens">
+              <li><a class="en-tete__lien" href="index.html" aria-current="page">Les salles</a></li>
+              <li><a class="en-tete__lien" href="mes-emprunts.html">Mes demandes</a></li>
+            </ul>
+          </nav>
+          </div>
+          <a class="bouton bouton--primaire en-tete__connexion" href="connexion.html">Connexion</a>
+        </div>
+      </header>
+
+      <main>
+        
+
+
+      <!-- Recherche -->
+        <section>
+            <form method="POST" class="filtres" id="filtres" role="search">
+              <p>Filtres</p>
+              <div class="champ">
+                <label class="champ__etiquette" for="recherche">Recherche</label>
+                <div class="champ__recherche">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+                  <input class="champ__saisie" id="recherche" name="q" type="search" placeholder="Titre ou auteur">
+                </div>
+              </div>
+              <div>
+                  <input type="select" name="quartier">
+                  <label for="quartier">Quartiers</label>
+
+                  <input type="text">
+                  <label for="capacite">Capacité minimale</label>
+
+                <fieldset>
+                  <legend>Equipement</legend>
+
+                  <div>
+                    <input type="checkbox" id="pmr" name="pmr" />
+                    <label for="PMR">PMR</label>
+                  </div>
+
+                  <div>
+                    <input type="checkbox" id="cuisine" name="cuisine" />
+                    <label for="cuisine">Cuisine</label>
+                  </div>
+
+                  <div>
+                    <input type="checkbox" id="videoProj" name="videoProj" />
+                    <label for="videoProj">vidéo Projecteur</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" id="scene" name="scene" />
+                    <label for="scene">Scène</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" id="parking" name="parking" />
+                    <label for="parking">Parking</label>
+                  </div>
+                </fieldset>
+              </div>
+            </form>
+        </section>
+
+      <!-- Salle -->
+      <p class="catalogue__compte" id="nbSalles" aria-live="polite"></p>
+      <div class="message" id="message"></div>
+      <section>
+        <div class="card" id="card">
+          
+        </div>
+      </section>
+
+      <!--FOOTER-->
+
+      </main>
     <!--
       Écran à intégrer : le catalogue des salles d'Agora.
       Maquettes : maquettes/Catalogue-mobile.png et maquettes/Catalogue-desktop.png.
@@ -33,5 +112,15 @@
 
       Les icônes de la maquette sont dans public/icones/ (SVG, trait de 2 px).
     -->
+    
+  <footer class="pied-de-page">
+    <div class="pied-de-page__contenu">
+      <p>Agora</p>
+      <ul class="pied-de-page__liens">
+        <li><a href="accessibilite.html">Accessibilité</a></li>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+      </ul>
+    </div>
+  </footer>
   </body>
 </html>

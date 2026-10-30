@@ -67,3 +67,25 @@
   --cible-minimale: 44px; /* aucune cible tactile plus petite */
   --largeur-max: 1200px; /* largeur du contenu en desktop */
 }
+
+/*HEADER*/
+
+
+.en-tete__contenu{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.navigation{
+  display: flex;
+  align-items:center;
+}
+
+ul{
+  display:flex;
+  flex-direction: row;
+  list-style: none;
+  gap:1rem;
+}
+

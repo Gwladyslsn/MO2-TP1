@@ -18,7 +18,7 @@ Code de départ du TP1 du module M02. Un projet Vite en JavaScript, sans framewo
 Prérequis : Node.js 22 ou 24, Docker Desktop.
 
 ```bash
-cd basecode-agora-tp1
+cd TP1
 npm install
 ```
 
