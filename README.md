@@ -1,3 +1,9 @@
+# Avancée
+Affichage de toutes les salles
+Recherche par nom fonctionnelle
+
+
+
 # Agora – TP1 : intégrer le catalogue des salles
 
 Code de départ du TP1 du module M02. Un projet Vite en JavaScript, sans framework : vous écrivez le HTML, le CSS et le JavaScript de l'écran « Trouver une salle ».
