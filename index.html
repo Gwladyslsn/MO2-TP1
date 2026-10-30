@@ -49,10 +49,15 @@
                 </div>
               </div>
               <div>
-                  <input type="select" name="quartier">
-                  <label for="quartier">Quartiers</label>
+                <select name="quartier" id="quartier">  <option value="">Tous les quartiers</option>
+                  <option value="Centre-ville">Centre-ville</option>
+                  <option value="Les Tilleuls">Les Tilleuls</option>
+                  <option value="Bellevue">Bellevue</option>
+                  <option value="Port-Neuf">Port-Neuf</option>
+                  <option value="Saint-Martin">Saint-Martin</option>
+                </select>
 
-                  <input type="text">
+                  <input type="text" placeholder="Ex: 50">
                   <label for="capacite">Capacité minimale</label>
 
                 <fieldset>
@@ -115,7 +120,7 @@
     
   <footer class="pied-de-page">
     <div class="pied-de-page__contenu">
-      <p>Agora</p>
+      <p>Agora – Les salles municipales de Montvert </p>
       <ul class="pied-de-page__liens">
         <li><a href="accessibilite.html">Accessibilité</a></li>
         <li><a href="mentions-legales.html">Mentions légales</a></li>

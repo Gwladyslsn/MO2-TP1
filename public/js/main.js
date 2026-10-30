@@ -1,7 +1,4 @@
     /*
-    Agora – TP1 : le catalogue des salles.
-
-    Adresse de l'API Agora. Le backend doit tourner sur votre poste (voir README.md).
     Documentation de l'API (Swagger) : http://localhost:8080/docs
 
     Routes utiles pour cet écran :
@@ -13,7 +10,6 @@
     l'en-tête X-Simulation (valeurs : lent, erreur, vide) à votre requête, ou le paramètre
     ?simulation=lent à l'adresse appelée. Retirez-le avant de rendre.
     */
-import { creerCarteSalle, element } from "./carte-salle.js";
 const API_URL = "http://localhost:8080/api/agora";
 
 const reponse = await fetch(`${API_URL}/salles`, {
@@ -23,11 +19,13 @@ const reponse = await fetch(`${API_URL}/salles`, {
 if (!reponse.ok){
     throw new Error(`Erreur HTTP : ${reponse.status}`);
 }
-const salles = await reponse.json();
+const data = await reponse.json();
+const toutesSalles = data.contenu;
 
 export function afficherSalles(salles){
+    const card = document.getElementById("card");
+    card.innerHTML = "";
     let sallesTotal = salles.length;
-    console.log(sallesTotal);
 
     const nbSalles = document.getElementById("nbSalles");
     nbSalles.textContent =  `Vous trouverez ${sallesTotal} salles`;
@@ -49,6 +47,24 @@ export function afficherSalles(salles){
     }
 }
 
-afficherSalles(salles.contenu)
+export function afficherResultatRecherche(salles){
+    const recherche = document.getElementById("recherche").value;
+    const resultat = toutesSalles.filter((salle)=>
+    salle.nom.includes(recherche));
+    const resultMessage = document.getElementById("message");
+    resultMessage.textContent = resultat.length === 0 ? "Aucune salle trouvée" : "";
+    afficherSalles(resultat);
+}
+
+
+const inputRecherche = document.getElementById("recherche");
+inputRecherche.addEventListener("keydown", (e) =>{
+    if (e.key === 'Enter') {
+        e.preventDefault(); // Optionnel : empêche le comportement par défaut (ex: soumettre un formulaire)
+        afficherResultatRecherche()
+}});
+
+
+afficherSalles(toutesSalles)
 
 
